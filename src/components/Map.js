@@ -1,0 +1,16 @@
+import React from "react"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+
+
+const MyMapComponent = (props) =>
+  <GoogleMap
+    defaultZoom={16}
+    defaultCenter={{ lat: props.lat, lng: props.lng }}
+  >
+    {props.isMarkerShown && <Marker position={{ lat: props.lat, lng: props.lng }} />}
+  </GoogleMap>
+
+
+
+
+export default withScriptjs(withGoogleMap(MyMapComponent));

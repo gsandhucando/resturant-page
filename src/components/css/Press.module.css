@@ -1,0 +1,53 @@
+.pressContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0px 100px 0;
+  padding-top: 150px;
+}
+
+
+h5 {
+  margin-bottom: 25px;
+  font-size: .9em;
+  padding-bottom: 20px;
+}
+
+.italicP  {
+  margin: 35px 0;
+  color: #333333;
+  padding: 0 5px;
+  font-size: 1em;
+  color: red;
+  font-style: italic;
+}
+
+.breakLine {
+  margin: 50px 0;
+  background: #827553;
+}
+
+.button {
+  margin: 10px 0;
+  height: 50px;
+  width: 100px;
+  border: none;
+  background: white;
+  color: #827553;
+  cursor: pointer;
+  border: 1px solid #827553;
+}
+
+.button:hover {
+  background: #827553;
+  color: white;
+  transition: 0.4s;
+}
+
+.button:focus {
+  outline: 3px solid #827553;
+}
+
+.bold {
+  font-weight: bold;
+}

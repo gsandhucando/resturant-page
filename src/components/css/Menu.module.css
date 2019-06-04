@@ -1,0 +1,60 @@
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  text-align: center;
+  margin: 0px 100px 0;
+  padding-top: 150px;
+}
+
+#italicP {
+  font-style: italic;
+  color: red;
+}
+
+
+h3 {
+  margin-bottom: 25px;
+  /* font-size: 15px; */
+  font-size: 1.1em;
+  padding-bottom: 20px;
+}
+
+p {
+  margin: 35px 0;
+  color: #333333;
+  padding: 0 5px;
+  font-size: 1em;
+}
+
+.breakLine {
+  margin: 50px 0;
+  background: #827553;
+}
+
+.button {
+  margin: 50px 0;
+  height: 50px;
+  width: 100px;
+  border: none;
+  background: #827553;
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #333333;
+  transition: 0.4s;
+}
+
+.button:focus {
+  outline: 3px solid #827553;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 375px) {
+
+}

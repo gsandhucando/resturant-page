@@ -1,0 +1,33 @@
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  text-align: center;
+  margin: 0px 100px 0;
+  padding-top: 150px;
+}
+
+/* .infoDiv {
+
+} */
+
+h4 {
+  margin-bottom: 25px;
+  /* font-size: 15px; */
+  font-size: 1.1em;
+}
+
+p {
+  margin-bottom: 25px;
+  color: #333333;
+}
+
+a {
+  color: #827553;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a :active {
+  color: #827553;
+}

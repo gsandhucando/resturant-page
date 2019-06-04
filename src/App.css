@@ -1,0 +1,349 @@
+@import url(./components/css/nav.css);
+@import url(./components/css/mobileNav.css);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* main photo carousel */
+
+.img {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+}
+
+.leftArrow {
+  position: absolute;
+  color: white;
+  left: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: rgba(192,192,192,0.1);
+  cursor: pointer;
+}
+
+.rightArrow {
+  position: absolute;
+  color: white;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: rgba(192,192,192,0.1);
+  cursor: pointer;
+}
+
+.carousel-container {
+  z-index: 20;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 100%;
+}
+
+/* resturant main page discription */
+
+.disc-rest {
+  margin: 80px;
+  text-align: justify;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  line-height: 2.5em;
+}
+
+.disc-rest p {
+  margin-bottom: 25px;
+}
+
+.first-letter {
+  color: #827553;
+}
+
+/* footer */
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: #827553;
+}
+
+.sm-icon-container {
+  align-self: center;
+  margin: 10px;
+}
+
+.fa-facebook {
+  margin: 10px;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.fa-twitter {
+  margin: 10px;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.fa-instagram {
+  margin: 10px;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.footer-input {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 60%; */
+  align-items: center;
+}
+
+.footer-logo {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  background: white;
+  padding: 12px;
+  border-radius: 40%;
+}
+
+.footer-form {
+  /* padding: 12px; */
+  margin: auto;
+}
+
+input[type=email] {
+  border: 2px solid #827553;
+  border-radius: 5px;
+  width: 200px;
+  height: 25px;
+  padding: 10px;
+}
+
+.email-btn {
+  border: none;
+  background: white;
+  border-radius: 2px;
+  height: 20px;
+  color: #827553;
+  width: 80px;
+  margin-left: 5px;
+}
+
+.email-btn:hover {
+  background: #333333;
+  color: white;
+  transition: 0.4s;
+}
+
+/* animation */
+
+#main-logo {
+  width: 50vw;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.fadeIn {
+  animation: fadeIn 2s linear normal both;
+}
+
+.fadeOut {
+  animation: fadeOut 2s linear normal both;
+}
+
+@-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webKit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webKit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* .prev-Img {
+  z-index: 0;
+} */
+
+.currentImg {
+  z-index: 1;
+}
+
+
+/* media queries */
+@media screen and (max-width: 375px) {
+  @import url(./components/css/mobileNav.css);
+
+
+  body{
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+
+
+  /* main photo carousel */
+
+.img {
+  height: auto;
+  width: 100%;
+  position: relative;
+  top: 10%;
+}
+
+.carousel-container {
+  z-index: 20;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+#main-logo {
+  width: 50vw;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.leftArrow {
+  position: absolute;
+  color: white;
+  left: 2%;
+  top: 15%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: rgba(192,192,192,0.1);
+}
+
+.rightArrow {
+  position: absolute;
+  color: white;
+  right: 2%;
+  top: 15%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: rgba(192,192,192,0.1);
+}
+
+  /* resturant main page discription */
+
+.disc-rest {
+  /* margin: 100px; */
+  text-align: center;
+  color: #333333;
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  padding-top: 30px;
+  margin: 10px;
+  position: absolute;
+  top: 45%;
+  line-height: 3em;
+}
+
+
+  /* footer */
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    line-height: 26px;
+    position: relative;
+  }
+
+  .footer-logo {
+    align-self: center;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    background: white;
+  }
+
+  .footer-form {
+    position: absolute;
+    padding: 25px;
+  }
+
+  .footer-input {
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  input[type=text] {
+    border: 2px solid #827553;
+    border-radius: 5px;
+  }
+
+  .email-btn {
+    border: none;
+    background: #827553;
+    border-radius: 3px;
+    height: 21px;
+    color: white;
+    width: 100px;
+  }
+
+  .sm-icon-container {
+    background: #827553;
+    margin: 25px;
+  }
+
+}

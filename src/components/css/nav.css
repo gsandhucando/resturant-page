@@ -1,0 +1,66 @@
+/* navbar */
+
+::selection {
+  background: #827553;
+  color: white;
+}
+
+/* .burger {
+  display: none;
+  cursor: pointer;
+} */
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #827553;
+  margin: 5px 15px 0 0;
+}
+
+nav {
+  z-index: 98;
+  min-height: 15vh;
+  width: 100vw;
+  display: flex;
+  background: white;
+  position: fixed;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-logo {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 40px;
+}
+
+.nav-li:hover {
+  cursor: pointer;
+  color: #827553;
+}
+
+.nav-li:hover {
+  cursor: pointer;
+  color: #827553;
+}
+
+li a {
+  margin: 10px;
+  text-decoration: none;
+  display: flex;
+  color: #827553;
+}
+
+li:active {
+  background: #827553;
+  color: white;
+}
+
+/* .nav-ul {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  list-style: none;
+  margin: 5px;
+} */

@@ -1,0 +1,100 @@
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import Modal from "@material-ui/core/Modal";
+import DropDown from './DropDown';
+
+
+
+
+let circleStyle = {
+  width: 10,
+  height: 10,
+  display: 'inline-block',
+  borderRadius: '50%',
+  border: '1px solid',
+  marginRight: '10px'
+}
+
+let disptionStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  width: '100%'
+}
+
+function getModalStyle() {
+  return {
+    top: `${50}%`,
+    left: `${50}%`,
+    transform: `translate(-${50}%, -${50}%)`,
+    width: '80vw',
+    maxWidth: 600,
+    minWidth: 300,
+
+  };
+}
+
+const useStyles = makeStyles(theme => ({
+  paper: {
+    position: "absolute",
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(4),
+    outline: "none",
+  }
+}));
+
+function SimpleModal(props) {
+  // getModalStyle is not a pure function, we roll the style only on the first render
+  const [modalStyle] = React.useState(getModalStyle);
+
+  const classes = useStyles();
+
+  console.log(props);
+  return (
+    <div>
+      <Modal
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+        open={props.open}
+        onClose={props.handleClose}
+      >
+        <div style={modalStyle} className={classes.paper}>
+        <div><Typography variant="h6">
+            LANGBAAN
+          </Typography></div>
+          <div style={disptionStyle}>
+          <Typography>NEED TO KNOW</Typography>
+          <Typography variant="subtitle1" id="simple-modal-description">
+            <p>
+              We offer a seasonal driven pre-fixe chef's tasting menu. If you
+              have allergies or dietary restrictions, please make a note about
+              it when making a reservation. We apologize in advance if we cannot
+              accommodate certain restrictions, it may change monthly.
+              Reservations are available 3 months in advance. Please contact us
+              directly at 971-344-2564 for reservations of 5+ people.
+            </p>
+            <p>
+            We require all bookings to confirm their reservation at least 3 days in advance via phone or email. If we are unable to confirm with you using the contact information provided, your reservation will be cancelled three days prior to the reservation date at 3:00pm and the table will be released to the wait list.
+            </p>
+            <p>
+            Our seating times are Thursday - Saturday 6:00pm & 8:45pm, Sunday 5:30pm & 8:15pm
+            </p>
+          </Typography>
+          </div>
+          <div style={{display: 'flex', flexDirection: 'row'}}>
+          <DropDown menu={['1 Guest', '2 Guests', '3 Guests', '4 Guests', '5+ Guests']}/>
+          <div>
+            <div style={{color: 'blue'}}><span style={Object.assign({borderColor: 'blue'},circleStyle)}></span>Available</div>
+            <div style={{color: 'red'}}><span style={Object.assign({borderColor: 'red'},circleStyle)}></span>Sold Out</div>
+          </div>
+          </div>
+          <SimpleModal />
+        </div>
+      </Modal>
+    </div>
+  );
+}
+
+export default SimpleModal;
