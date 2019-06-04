@@ -13,16 +13,38 @@ router.get("/", async (req, res) => {
 
 router.post("/", (req, res) => {
   console.log(req.body);
-  const post = new Post({
+  Post.create({
     name: req.body.name,
     phoneNumber: req.body.phoneNumber
-  });
-
-  post.save().then(data => {
+  }).then(data => {
     res.json(data)
   }).catch(err => {
     res.json(err)
   })
 });
+
+
+router.put("/", (req, res) => {
+  const name = req.body.target
+  let id = req.body._id
+  console.log(req.body);
+  Post.findByIdAndUpdate( id,{
+    $set : { [name] : req.body[name]}},
+    {new: true}).then(data => {
+      res.json(data)
+    }).catch(err => {
+      console.log(err)
+    })
+})
+
+router.delete("/:id", (req, res) => {
+  let id = req.params.id
+  Post.findByIdAndRemove(id).then(data => {
+    res.json(data)
+  }).catch(err => {
+    console.log(err)
+  })
+})
+
 
 module.exports = router;

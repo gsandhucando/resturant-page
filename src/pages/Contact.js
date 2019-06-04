@@ -2,6 +2,7 @@ import React from "react";
 import Style from "../components/css/Contact.module.css";
 import Map from "../components/Map";
 import dotenv from 'dotenv';
+//create state that will change line 14 useState
 
 dotenv.config({
   path: '../../.env'
@@ -10,6 +11,7 @@ dotenv.config({
 let Contact = props => {
   return (
     <div class={Style.contactContainer}>
+    <ResModal open={this.state.modale} handleClose={this.handleClose}/>
       <h4>Contact Page</h4>
       <p style={{ marginTop: "20px" }}>
         <a

@@ -2,8 +2,15 @@ const express = require('express');
 const app = express();
 const port = 5000;
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const cors = require('cors');
+
+dotenv.config({
+  path: '.env'
+})
 
 
+app.use(cors());
 app.use(express.json());
 
 //Import Routes
@@ -12,17 +19,10 @@ const postsRoutes = require('./routes/reservations');
 app.use('/posts', postsRoutes);
 
 
-//ROUTES
-app.get('/api', (req, res) => {
-  let customers = [
-    {id: 1, firstName: 'joe', lastName: 'meow'}
-  ]
 
-  res.json(customers)
-})
 
 //Connect To DB
-mongoose.connect('//localhost:27017/langbaan', { useNewUrlParser: true }, ()=> {
+mongoose.connect(`mongodb+srv://${process.env.CLUSTER_USERNAME}:${process.env.CLUSTER_PASSWORD}@cluster0-i4rey.mongodb.net/langbaan`, { useNewUrlParser: true }, ()=> {
   console.log(`connected to DB!`)
 })
 
