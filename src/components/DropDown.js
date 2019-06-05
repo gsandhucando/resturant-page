@@ -32,6 +32,7 @@ const styles = theme => ({
   }
 });
 
+
 class ClickAway extends React.Component {
   state = {
     open: false,
@@ -73,8 +74,9 @@ class ClickAway extends React.Component {
             {open ? (
               <Paper className={classes.paper}>
                 {this.props.menu.map(item => {
+                  console.log(item)
                   return (
-                    <div onClick={() => this.changeOption(item)} key={item}>
+                    <div className='guestDropDown' onClick={() => this.changeOption(item)} key={item}>
                       {item}
                     </div>
                   );

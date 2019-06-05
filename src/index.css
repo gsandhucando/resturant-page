@@ -12,6 +12,18 @@ code {
     monospace;
 }
 
+.guestDropDown {
+  text-align: center;
+  font-size: 1.3em;
+  border: 1px solid #827553;
+  color: #333333;
+}
+
+.guestDropDown:hover {
+  background: black;
+  color: #827553;
+}
+
 .modal::-webkit-scrollbar {
   width: 1em;
 
@@ -30,7 +42,11 @@ code {
 }
 
 .calendar-month_header_title {
-  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+  font-size: 20px;
+  color: #827553;
 }
 
 .calendar-month_header {
@@ -43,13 +59,16 @@ code {
 .calendar-days_of_week {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   padding: 5px;
-  background: yellow;
+  background: #827553;
+  border: 1px solid #827553;
+  border-radius: 5px;
 }
 
 .calendar-days_of_week_day {
-  margin: 0 5px 0 5px;
+  margin: 0 5px 0 -20px;
+  color: white;
 }
 
 .calendar-day {
@@ -57,6 +76,13 @@ code {
   height: 30px;
   border: none;
   padding: 10px 5px;
+  font-size: 0.9em;
+}
+
+.calendar-day:hover {
+  background: #827553;
+  color: white;
+  border: none;
 }
 
 .calendar-header_button {
@@ -64,4 +90,19 @@ code {
   margin: 0 5px;
   border-radius: 50%;
   border: 1px solid black;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+}
+
+.resModalBtn {
+  border: none;
+  height: 50px;
+  width: 120px;
+  background: #827553;
+  color: white;
+  border-radius: 5px;
+  margin: 20px 0 0 0;
 }

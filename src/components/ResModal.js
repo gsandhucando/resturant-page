@@ -116,7 +116,7 @@ function SimpleModal(props) {
       >
         <div style={modalStyle} className={classes.paper + " modal"}>
           <div>
-            <Typography variant="h6">LANGBAAN</Typography>
+            <Typography variant="h6" style={{color: '#827553'}}>LANGBAAN</Typography>
           </div>
           <div style={disptionStyle}>
             <Typography>NEED TO KNOW</Typography>
@@ -169,8 +169,10 @@ function SimpleModal(props) {
               activeMonth={new Date()}
             />
           </div>
+          <div className='modal-container'>
           <SimpleModal />
-          <button onClick={setRes}>CONFIRM Reservation</button>
+          <button className='resModalBtn' onClick={setRes}>CONFIRM Reservation</button>
+          </div>
         </div>
       </Modal>
     </div>

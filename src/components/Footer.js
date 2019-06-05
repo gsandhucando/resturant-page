@@ -11,14 +11,16 @@ class Footer extends Component {
     this.addEmail = this.addEmail.bind(this);
   }
 
+  handleSubmit = e => {
+    e.preventDefault();
+  }
+
   addEmail() {
     let emailList = this.state.emailList;
     let newEmail = this.inputRef.current.value;
     console.log(newEmail, 'email submitted')
     if (newEmail === "") {
       return null;
-    } else {
-      emailList.push(newEmail);
     }
 
     axios.post('http://localhost:5000/emails', {email: newEmail}).then(response => {
@@ -43,7 +45,7 @@ class Footer extends Component {
         <div className="footer-input">
           <form
           className="footer-form"
-          // onSubmit={this.handleSubmit}
+          onSubmit={this.handleSubmit}
           autoComplete='on'
           >
             <input
