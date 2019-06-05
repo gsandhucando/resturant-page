@@ -30,7 +30,7 @@ let Team = (props) => {
   ]
   return(
     <div className={Style.teamContainer}>
-      <EarlChefBio open={showBio} handleBio={handleBio}/>
+      <EarlChefBio className={Style.bioContainer} open={showBio} handleBio={handleBio}/>
       <div className={Style.breakLine} style={{ width: "100%", height: 1 }} />
       <h3 className={Style.heading}>BACK OF HOUSE</h3>
       <div className={Style.breakLine} style={{ width: "100%", height: 1 }} />

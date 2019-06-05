@@ -1,34 +1,34 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 class Footer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      emailList: []
+      err: ''
     };
     this.inputRef = React.createRef();
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.addEmail = this.addEmail.bind(this);
   }
 
-  handleSubmit = e => {
-    e.preventDefault();
-  };
-
   addEmail() {
     let emailList = this.state.emailList;
-    let newEmail = this.inputRef.value;
-
+    let newEmail = this.inputRef.current.value;
+    console.log(newEmail, 'email submitted')
     if (newEmail === "") {
       return null;
     } else {
       emailList.push(newEmail);
     }
 
-    this.setState({ emailList });
-    console.log(emailList);
-    this.inputRef.value = "";
-    this.inputRef.focus();
+    axios.post('http://localhost:5000/emails', {email: newEmail}).then(response => {
+      console.log(emailList);
+      this.inputRef.current.value = "";
+      this.inputRef.current.focus();
+    }).catch(err => {
+      this.setState({err: err.message})
+    })
+
   }
 
   render() {
@@ -43,19 +43,23 @@ class Footer extends Component {
         <div className="footer-input">
           <form
           className="footer-form"
-          onSubmit={this.handleSubmit}
+          // onSubmit={this.handleSubmit}
           autoComplete='on'
           >
             <input
               type="email"
               name='email'
               placeholder="Enter Email for Deals"
-              ref={e => (this.inputRef = e)}
+              ref={this.inputRef}
             />
-            <button className="email-btn" onClick={this.addEmail}>
+            <button type='button' className="email-btn" onClick={this.addEmail}>
               SUBSCRIBE
             </button>
           </form>
+          {this.state.err.length > 0 ?
+          <div>
+            {this.state.err}
+          </div> : null}
         </div>
         <div className="sm-icon-container">
           <a href="/" className="fa fa-facebook" />

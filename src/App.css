@@ -237,7 +237,7 @@ input[type=email] {
   height: auto;
   width: 100%;
   position: relative;
-  top: 10%;
+  top: 50%;
 }
 
 .carousel-container {
@@ -255,7 +255,7 @@ input[type=email] {
   height: auto;
   position: absolute;
   left: 50%;
-  top: 15%;
+  top: 60%;
   transform: translate(-50%, -50%);
   z-index: 10;
 }
@@ -264,7 +264,7 @@ input[type=email] {
   position: absolute;
   color: white;
   left: 2%;
-  top: 15%;
+  top: 60%;
   transform: translateY(-50%);
   z-index: 2;
   background-color: rgba(192,192,192,0.1);
@@ -274,7 +274,7 @@ input[type=email] {
   position: absolute;
   color: white;
   right: 2%;
-  top: 15%;
+  top: 60%;
   transform: translateY(-50%);
   z-index: 2;
   background-color: rgba(192,192,192,0.1);

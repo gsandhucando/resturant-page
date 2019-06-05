@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Style from "../components/css/Contact.module.css";
 import Map from "../components/Map";
 import dotenv from 'dotenv';
@@ -9,13 +9,14 @@ dotenv.config({
 })
 
 let Contact = props => {
+
   return (
-    <div class={Style.contactContainer}>
-    <ResModal open={this.state.modale} handleClose={this.handleClose}/>
+    <div className={Style.contactContainer}>
+    {/* <ResModal open={this.state.modale} handleClose={this.handleClose}/> */}
       <h4>Contact Page</h4>
-      <p style={{ marginTop: "20px" }}>
+      <div style={{ marginTop: "20px" }}>
         <a
-          class="fl r-iIe80IPkn6PQ"
+          className="fl r-iIe80IPkn6PQ"
           title="Call via Hangouts"
           href="https://www.google.com/search?q=langbaan+phone+number&amp;oq=langbaan+phone+number&amp;aqs=chrome..69i57.2948j1j4&amp;sourceid=chrome&amp;ie=UTF-8#"
           data-number="+19713442564"
@@ -27,9 +28,9 @@ let Contact = props => {
         </a>
         <br />6 SE 28th Ave, Portland, OR 97214 <br />
         reservations@langbaanpdx.com
-      </p>
+      </div>
 
-      <p style={{ marginTop: -10 }}>
+      <div style={{ marginTop: -10 }}>
         <div>
           <Map
             lat={45.522514}
@@ -41,7 +42,7 @@ let Contact = props => {
             mapElement={<div style={{ height: `100%` }} />}
           />
         </div>
-      </p>
+      </div>
       <div className={Style.breakLine} style={{ width: "100%", height: 1 }} />
       <h4>HOURS</h4>
       <p style={{ padding: "0 0px" }}>

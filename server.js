@@ -15,8 +15,10 @@ app.use(express.json());
 
 //Import Routes
 const postsRoutes = require('./routes/reservations');
+const postEmail = require('./routes/Emails');
 
 app.use('/posts', postsRoutes);
+app.use('/emails', postEmail);
 
 
 

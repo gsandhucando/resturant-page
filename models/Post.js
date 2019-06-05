@@ -16,4 +16,14 @@ const ReservationSchema = mongoose.Schema({
   email: String
 })
 
-module.exports = mongoose.model('Reservations', ReservationSchema)
+const EmailSubscription = mongoose.Schema({
+  email: {
+    type: String,
+    require: true
+  }
+})
+
+let Reservations = mongoose.model('Reservations', ReservationSchema)
+let Emails = mongoose.model('Email', EmailSubscription)
+
+module.exports = {Reservations, Emails}
