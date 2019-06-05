@@ -36,7 +36,7 @@ let Team = (props) => {
       <div className={Style.breakLine} style={{ width: "100%", height: 1 }} />
       {teamStaffBack.map((bio, index) => {
         return <div onClick={()=> {index === 0 ? handleBio(true) : handleBio(false)}} key={bio.name} className={Style.profile}>
-          <img className={Style.profileImg} key={index} src={bio.profile_url} />
+          <img className={Style.profileImg} key={index} src={bio.profile_url} alt=''/>
           <h5>{bio.name}</h5>
           <h5 style={{color: '#333333', marginTop: '-40px'}}>{bio.title}</h5>
           </div>
@@ -49,7 +49,7 @@ let Team = (props) => {
       </div>
       {teamStaffFront.map((bio, index) => {
         return <div className={Style.profile}>
-          <img className={Style.profileImg} key={index} src={bio.profile_url} />
+          <img className={Style.profileImg} key={index} src={bio.profile_url} alt=''/>
           <h5>{bio.name}</h5>
           <h5 style={{color: '#333333', marginTop: '-40px'}}>{bio.title}</h5>
           </div>

@@ -14,10 +14,7 @@ router.get("/", async (req, res) => {
 
 router.post("/", (req, res) => {
   console.log(req.body);
-  Post.create({
-    name: req.body.name,
-    phoneNumber: req.body.phoneNumber
-  }).then(data => {
+  Post.create(req.body).then(data => {
     res.json(data)
   }).catch(err => {
     res.json(err)

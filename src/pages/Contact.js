@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import Style from "../components/css/Contact.module.css";
 import Map from "../components/Map";
-import dotenv from 'dotenv';
-//create state that will change line 14 useState
+import dotenv from "dotenv";
 
 dotenv.config({
-  path: '../../.env'
-})
+  path: "../../.env"
+});
 
 let Contact = props => {
-
   return (
     <div className={Style.contactContainer}>
-    {/* <ResModal open={this.state.modale} handleClose={this.handleClose}/> */}
       <h4>Contact Page</h4>
       <div style={{ marginTop: "20px" }}>
         <a
@@ -30,13 +27,15 @@ let Contact = props => {
         reservations@langbaanpdx.com
       </div>
 
-      <div style={{ marginTop: -10 }}>
+      <div style={{ marginTop: 20 }}>
         <div>
           <Map
             lat={45.522514}
             lng={-122.637077}
             isMarkerShown={true}
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${
+              process.env.REACT_APP_GOOGLE_KEY
+            }`}
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div style={{ height: `100%` }} />}

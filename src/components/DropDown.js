@@ -51,6 +51,7 @@ class ClickAway extends React.Component {
   };
 
   changeOption = name => {
+    this.props.setSelectGuest(parseInt(name.slice(0, 1)))
     this.setState({
       option: name
     });

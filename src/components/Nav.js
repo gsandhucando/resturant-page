@@ -84,6 +84,7 @@ class Nav extends Component {
             nav={this.props.nav}
             toggle={this.state.mobile && this.state.toggleClass}
             openMenu={this.state.toggleClass}
+            mobile={this.state.mobile}
           />
         ) : null}
         <div

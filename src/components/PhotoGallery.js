@@ -45,7 +45,7 @@ class PhotoGallery extends Component {
         <div className="carousel-slide">
           <Slide src={this.state.images[this.state.currentIndex]} prevSrc={this.state.images[this.state.prevIndex]}/>
         </div>
-        <img id='main-logo' className={this.state.fade} src='./images/langbaanlogo.png' />
+        <img id='main-logo' className={this.state.fade} src='./images/langbaanlogo.png' alt=''/>
         <LeftArrow prevImage={this.prevImage} />
         <RightArrow nextImage={this.nextImage} />
       </div>

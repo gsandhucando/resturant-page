@@ -1,19 +1,14 @@
 const mongoose = require('mongoose');
 
 const ReservationSchema = mongoose.Schema({
-  name: {
-    type: String,
+  guest: {
+    type: Number,
     require: true
   },
   date: {
     type: Date,
     default: Date.now
-  },
-  phoneNumber: {
-    type: Number,
-    require: true
-  },
-  email: String
+  }
 })
 
 const EmailSubscription = mongoose.Schema({

@@ -1,9 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
 import DropDown from "./DropDown";
 import axios from "axios";
+import SimpleReactCalendar from "simple-react-calendar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronRight,
+  faChevronLeft
+} from "@fortawesome/free-solid-svg-icons";
+
+let style = {
+  padding: 12
+};
+
+let rightArrow = (
+  <div style={style}>
+    <FontAwesomeIcon icon={faChevronRight} />
+  </div>
+);
+
+let leftArrow = (
+  <div style={style}>
+    <FontAwesomeIcon icon={faChevronLeft} />
+  </div>
+);
 
 let circleStyle = {
   width: 10,
@@ -38,7 +60,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(4),
-    outline: "none"
+    outline: "none",
+    overflowY: "scroll"
   }
 }));
 
@@ -48,6 +71,13 @@ function SimpleModal(props) {
   const [reservations, setReservations] = React.useState([]);
   const classes = useStyles();
 
+  let [selectDate, setSelectDate] = useState("");
+  let [selectGuest, setSelectGuest] = useState(1);
+
+  const onSelect = e => {
+    setSelectDate(e);
+  };
+
   let getReservations = () => {
     axios
       .get("http://localhost:5000/posts")
@@ -55,6 +85,19 @@ function SimpleModal(props) {
         let data = response.data;
         console.log(data);
         setReservations(data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  let setRes = () => {
+    let newDate = new Date(selectDate)
+    axios
+      .post("http://localhost:5000/posts", {guest: selectGuest, date: newDate})
+      .then(response => {
+        let data = response.data;
+        console.log(data);
       })
       .catch(err => {
         console.log(err);
@@ -71,7 +114,7 @@ function SimpleModal(props) {
         open={props.open}
         onClose={props.handleClose}
       >
-        <div style={modalStyle} className={classes.paper}>
+        <div style={modalStyle} className={classes.paper + " modal"}>
           <div>
             <Typography variant="h6">LANGBAAN</Typography>
           </div>
@@ -87,16 +130,8 @@ function SimpleModal(props) {
                 us directly at 971-344-2564 for reservations of 5+ people.
               </p>
               <p>
-                We require all bookings to confirm their reservation at least 3
-                days in advance via phone or email. If we are unable to confirm
-                with you using the contact information provided, your
-                reservation will be cancelled three days prior to the
-                reservation date at 3:00pm and the table will be released to the
-                wait list.
-              </p>
-              <p>
-                Our seating times are Thursday - Saturday 6:00pm & 8:45pm,
-                Sunday 5:30pm & 8:15pm
+                {/* Our seating times are Thursday - Saturday 6:00pm & 8:45pm, */}
+                {/* Sunday 5:30pm & 8:15pm */}
               </p>
             </Typography>
           </div>
@@ -109,6 +144,7 @@ function SimpleModal(props) {
                 "4 Guests",
                 "5+ Guests"
               ]}
+              setSelectGuest={setSelectGuest}
             />
             <div>
               <div style={{ color: "blue" }}>
@@ -125,7 +161,16 @@ function SimpleModal(props) {
               </div>
             </div>
           </div>
+          <div style={{ width: 500 }}>
+            <SimpleReactCalendar
+              onSelect={onSelect}
+              headerNextArrow={rightArrow}
+              headerPrevArrow={leftArrow}
+              activeMonth={new Date()}
+            />
+          </div>
           <SimpleModal />
+          <button onClick={setRes}>CONFIRM Reservation</button>
         </div>
       </Modal>
     </div>

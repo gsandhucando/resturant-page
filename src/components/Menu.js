@@ -2,7 +2,7 @@ import React from "react";
 import { CSSTransitionGroup } from "react-transition-group";
 import { Link } from 'react-router-dom';
 
-const Menu = ({ nav, toggle, toggleRes }) => {
+const Menu = ({ nav, toggle, toggleRes, mobile }) => {
   let dropDownStyle = {
     width: "100vw",
     backgroundColor: "white",
@@ -56,7 +56,10 @@ const Menu = ({ nav, toggle, toggleRes }) => {
               className="nav-li"
               key={li}
             >
-              <a>{li}</a>
+              { mobile?
+              <a href='https://resy.com/cities/pdx/langbaan?date=2019-06-04'>{li}</a> :
+              <a href='# ' >{li}</a>
+              }
             </li>)
             }
           </CSSTransitionGroup>
