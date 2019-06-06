@@ -24,15 +24,6 @@ let leftArrow = (
   </div>
 );
 
-let circleStyle = {
-  width: 10,
-  height: 10,
-  display: "inline-block",
-  borderRadius: "50%",
-  border: "1px solid",
-  marginRight: "10px"
-};
-
 let disptionStyle = {
   display: "flex",
   flexDirection: "row",
