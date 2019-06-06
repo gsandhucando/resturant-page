@@ -37,7 +37,7 @@ class Footer extends Component {
       <div className="footer-container">
         <img
           className="footer-logo"
-          src="./images/LangBaan-Logo.png"
+          src="./images/Langbaan-Logo.png"
           alt="logo"
         />
 
