@@ -17,10 +17,10 @@ code {
   font-size: 1.3em;
   border: 1px solid #827553;
   color: #333333;
+  padding: 5px;
 }
 
 .guestDropDown:hover {
-  background: black;
   color: #827553;
 }
 
@@ -77,6 +77,7 @@ code {
   border: none;
   padding: 10px 5px;
   font-size: 0.9em;
+  /* color: red; */
 }
 
 .calendar-day:hover {
@@ -85,11 +86,28 @@ code {
   border: none;
 }
 
+.is-today{
+  color: white;
+  background: #827553;
+}
+
+.is-selected {
+  color: red;
+  background: #e3effc;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border: 2px solid red;
+}
+
 .calendar-header_button {
   background: rgba(0,0,0,0);
   margin: 0 5px;
   border-radius: 50%;
   border: 1px solid black;
+}
+
+.is-prev_month, .is-next_month{
+  color: rgba(200,200,200, .85);
 }
 
 .modal-container {
@@ -100,9 +118,10 @@ code {
 .resModalBtn {
   border: none;
   height: 50px;
-  width: 120px;
+  width: 130px;
   background: #827553;
   color: white;
   border-radius: 5px;
   margin: 20px 0 0 0;
+  font-size: 12px;
 }

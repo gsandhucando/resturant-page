@@ -11,11 +11,9 @@ class Footer extends Component {
     this.addEmail = this.addEmail.bind(this);
   }
 
-  handleSubmit = e => {
-    e.preventDefault();
-  }
 
-  addEmail() {
+  addEmail(e) {
+    e.preventDefault();
     let emailList = this.state.emailList;
     let newEmail = this.inputRef.current.value;
     console.log(newEmail, 'email submitted')
@@ -25,8 +23,9 @@ class Footer extends Component {
 
     axios.post('http://localhost:5000/emails', {email: newEmail}).then(response => {
       console.log(emailList);
-      this.inputRef.current.value = "";
-      this.inputRef.current.focus();
+      // this.inputRef.current.value = "";
+      // this.inputRef.current.focus();
+      window.location.href = '/';
     }).catch(err => {
       this.setState({err: err.message})
     })
@@ -45,8 +44,8 @@ class Footer extends Component {
         <div className="footer-input">
           <form
           className="footer-form"
-          onSubmit={this.handleSubmit}
           autoComplete='on'
+          onSubmit={this.addEmail}
           >
             <input
               type="email"
@@ -54,9 +53,9 @@ class Footer extends Component {
               placeholder="Enter Email for Deals"
               ref={this.inputRef}
             />
-            <button type='button' className="email-btn" onClick={this.addEmail}>
-              SUBSCRIBE
-            </button>
+            <input type='submit' className="email-btn"
+              value='SUBSCRIBE'
+            />
           </form>
           {this.state.err.length > 0 ?
           <div>
@@ -64,9 +63,9 @@ class Footer extends Component {
           </div> : null}
         </div>
         <div className="sm-icon-container">
-          <a href="/" className="fa fa-facebook" />
-          <a href="/" className="fa fa-twitter" />
-          <a href="/" className="fa fa-instagram" />
+          <a href="https://www.facebook.com/Langbaankitchen/" target="_blank" className="fa fa-facebook" rel="noopener noreferrer"/>
+          <a href="https://twitter.com/langbaan?lang=en" target="_blank" className="fa fa-twitter" rel="noopener noreferrer"/>
+          <a href="https://www.instagram.com/langbaanpdx/?hl=en" target="_blank" className="fa fa-instagram" rel="noopener noreferrer"/>
         </div>
       </div>
     );

@@ -6,10 +6,7 @@ import DropDown from "./DropDown";
 import axios from "axios";
 import SimpleReactCalendar from "simple-react-calendar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronRight,
-  faChevronLeft
-} from "@fortawesome/free-solid-svg-icons";
+import {faChevronRight, faChevronLeft} from "@fortawesome/free-solid-svg-icons";
 
 let style = {
   padding: 12
@@ -111,7 +108,7 @@ function SimpleModal(props) {
       <Modal
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
-        open={props.open}
+        open={props.open ? props.open : false}
         onClose={props.handleClose}
       >
         <div style={modalStyle} className={classes.paper + " modal"}>
@@ -171,7 +168,7 @@ function SimpleModal(props) {
           </div>
           <div className='modal-container'>
           <SimpleModal />
-          <button className='resModalBtn' onClick={setRes}>CONFIRM Reservation</button>
+          <button className='resModalBtn' onClick={setRes}>Confirm Reservation</button>
           </div>
         </div>
       </Modal>

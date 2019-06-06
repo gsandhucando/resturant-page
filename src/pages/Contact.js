@@ -20,6 +20,8 @@ let Contact = props => {
           data-pstn-out-call-url=""
           data-rtid="iIe80IPkn6PQ"
           data-ved="2ahUKEwijmu23hrDfAhUBGnwKHVrGAyoQkAgoADAAegQIChAE"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           (971) 344-2564
         </a>
@@ -50,7 +52,13 @@ let Contact = props => {
         at 6:00pm and 8:45pm, and on Sundays at 5:30pm and 8:15pm.
       </p>
       <div className={Style.btnContainer}>
-        <button className={Style.button}>RESERVATIONS</button>
+        <a
+          href="https://resy.com/cities/pdx/langbaan"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className={Style.button}>RESERVATIONS</button>
+        </a>
       </div>
     </div>
   );
