@@ -92,6 +92,7 @@ class Nav extends Component {
         >
           <Link to="/">
             <img
+            className='lg-nav-logo'
               style={this.state.mobile ? mobileLogoStyle : logoStyle}
               src="./images/Langbaan-Logo.png"
               alt="logo"
