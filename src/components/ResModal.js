@@ -80,7 +80,6 @@ function SimpleModal(props) {
       .get(process.env.ENV === 'development' ? "http://localhost:5000/posts" : '/posts')
       .then(response => {
         let data = response.data;
-        console.log(data[1].date);
         setReservations(data);
       })
       .catch(err => {
