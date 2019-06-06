@@ -56,15 +56,7 @@ function SimpleModal(props) {
               the Bangkok, Thailand-born restaurateur among the most talented
               chefs in Portland, Oregon, where he helms a small empire of
               nationally acclaimed Thai restaurants — including Langbaan, PaaDee
-              and Hat Yai. Both the Oregonian and Portland Monthly crowned
-              Langbaan as restaurant of the year in 2014, and GQ ranked it
-              second on its list of the “25 Most Outstanding Restaurants of
-              2015.” Hat Yai landed on USA Today’s “Top 10 Best New Restaurants”
-              in 2016. A James Beard Award semi-finalist, Ninsom is also partner
-              in Korean barbecue joint Kim Jong Smokehouse. Before opening his
-              first restaurant in 2008, Ninsom — who holds degrees in marketing
-              and economics — traveled the world pursuing a career in
-              international business.
+              and Hat Yai.
             </p>
           </Typography>
 
