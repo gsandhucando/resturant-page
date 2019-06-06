@@ -80,7 +80,7 @@ function SimpleModal(props) {
       .get(process.env.ENV === 'development' ? "http://localhost:5000/posts" : '/posts')
       .then(response => {
         let data = response.data;
-        console.log(data);
+        console.log(data[1].date);
         setReservations(data);
       })
       .catch(err => {
@@ -143,20 +143,6 @@ function SimpleModal(props) {
               ]}
               setSelectGuest={setSelectGuest}
             />
-            <div>
-              <div style={{ color: "blue" }}>
-                <span
-                  style={Object.assign({ borderColor: "blue" }, circleStyle)}
-                />
-                Available
-              </div>
-              <div style={{ color: "red" }}>
-                <span
-                  style={Object.assign({ borderColor: "red" }, circleStyle)}
-                />
-                Sold Out
-              </div>
-            </div>
           </div>
           <div style={{ width: 500 }}>
             <SimpleReactCalendar
@@ -164,6 +150,7 @@ function SimpleModal(props) {
               headerNextArrow={rightArrow}
               headerPrevArrow={leftArrow}
               activeMonth={new Date()}
+              disableDaysOfWeek={false}
             />
           </div>
           <div className='modal-container'>

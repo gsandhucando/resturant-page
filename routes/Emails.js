@@ -14,4 +14,13 @@ router.post("/", (req, res) => {
   })
 });
 
+router.get("/", async (req, res) => {
+  try {
+    const emails = await Post.find();
+    res.json(emails);
+  } catch (err) {
+    res.json(err);
+  }
+});
+
 module.exports = router;
