@@ -93,7 +93,7 @@ class Nav extends Component {
           <Link to="/">
             <img
               style={this.state.mobile ? mobileLogoStyle : logoStyle}
-              src="./images/LangBaan-Logo.png"
+              src="./images/Langbaan-Logo.png"
               alt="logo"
             />
           </Link>
