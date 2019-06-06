@@ -31,7 +31,7 @@ app.use('/emails', postEmail);
 
 
 //Connect To DB
-mongoose.connect(`mongodb+srv://${process.env.CLUSTER_USERNAME}:${process.env.CLUSTER_PASSWORD}@cluster0-i4rey.mongodb.net/langbaan`, { useNewUrlParser: true }, ()=> {
+mongoose.connect(process.env.MONGODB_URI || `mongodb+srv://${process.env.CLUSTER_USERNAME}:${process.env.CLUSTER_PASSWORD}@cluster0-i4rey.mongodb.net/langbaan`, { useNewUrlParser: true }, ()=> {
   console.log(`connected to DB!`)
 })
 

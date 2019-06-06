@@ -77,7 +77,7 @@ function SimpleModal(props) {
 
   let getReservations = () => {
     axios
-      .get("http://localhost:5000/posts")
+      .get(process.env.ENV === 'development' ? "http://localhost:5000/posts" : '/posts')
       .then(response => {
         let data = response.data;
         console.log(data);
@@ -91,7 +91,7 @@ function SimpleModal(props) {
   let setRes = () => {
     let newDate = new Date(selectDate)
     axios
-      .post("http://localhost:5000/posts", {guest: selectGuest, date: newDate})
+      .post(process.env.ENV === 'development' ? "http://localhost:5000/posts" : '/posts', {guest: selectGuest, date: newDate})
       .then(response => {
         let data = response.data;
         console.log(data);

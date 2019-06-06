@@ -21,7 +21,7 @@ class Footer extends Component {
       return null;
     }
 
-    axios.post('http://localhost:5000/emails', {email: newEmail}).then(response => {
+    axios.post(process.env.ENV === 'development' ? 'http://localhost:5000/emails' : '/emails', {email: newEmail}).then(response => {
       console.log(emailList);
       // this.inputRef.current.value = "";
       // this.inputRef.current.focus();
