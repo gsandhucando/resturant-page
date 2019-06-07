@@ -84,7 +84,6 @@ function SimpleModal(props) {
       .post(process.env.ENV === 'development' ? "http://localhost:5000/posts" : '/posts', {guest: selectGuest, date: newDate})
       .then(response => {
         let data = response.data;
-        console.log(data);
       })
       .catch(err => {
         console.log(err);

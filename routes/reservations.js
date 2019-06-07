@@ -13,7 +13,6 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  console.log(req.body);
   Post.create(req.body)
     .then(data => {
       res.json(data);
@@ -26,7 +25,6 @@ router.post("/", (req, res) => {
 router.put("/", (req, res) => {
   const name = req.body.target;
   let id = req.body._id;
-  console.log(req.body);
   Post.findByIdAndUpdate(
     id,
     {

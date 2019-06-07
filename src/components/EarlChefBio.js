@@ -31,7 +31,6 @@ function SimpleModal(props) {
 
   const classes = useStyles();
 
-  console.log(props);
   return (
     <div>
       <Modal

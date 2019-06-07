@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Menu from "./Menu";
 import { debounce } from "lodash";
 import { Link } from "react-router-dom";
-console.log(debounce);
 
 class Nav extends Component {
   constructor(props) {
@@ -18,14 +17,12 @@ class Nav extends Component {
   // this.state.toggleClass ? "nav-active" : "nav-ul"
 
   toggleClassName() {
-    console.log("className toggled!");
     this.setState(prevState => ({
       toggleClass: !prevState.toggleClass
     }));
   }
 
   updateDimensions() {
-    console.log(window.innerWidth);
     if (window.innerWidth < 600) {
       this.setState({
         mobile: true

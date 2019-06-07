@@ -74,7 +74,6 @@ class ClickAway extends React.Component {
             {open ? (
               <Paper className={classes.paper}>
                 {this.props.menu.map(item => {
-                  console.log(item)
                   return (
                     <div className='guestDropDown' onClick={() => this.changeOption(item)} key={item}>
                       {item}

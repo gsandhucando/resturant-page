@@ -4,7 +4,6 @@ const Models = require("../models/Post");
 const Post = Models.Emails;
 
 router.post("/", (req, res) => {
-  console.log(req.body);
   Post.create({
     email: req.body.email
   }).then(data => {
