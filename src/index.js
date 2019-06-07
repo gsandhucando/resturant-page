@@ -37,7 +37,6 @@ class MainApp extends React.Component {
       <Router>
       <ResModal open={this.state.modale} handleClose={this.handleClose}/>
       <Route path='/' render={({location})=> {
-        console.log(location)
         return  <Nav nav={["Info", "Menu", "Team", "Press", "Reservations", "Contact"]} toggleRes={this.toggleRes} location={location}/>
       }}/>
         <Switch>
