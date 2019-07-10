@@ -1,24 +1,9 @@
 https://damp-badlands-70555.herokuapp.com/ <---hosted project
 
-Front-end:
-react
-lodash
-font awesome
-react router dom
-react google maps
-react transition group
-material-ui
-simple react calendar
-css
-Back-end:
-axios
-express
-mongoDB
-mongoose
-dotenv
-cors
 
-I used react to create the front end of an existing restaurant and rebuild it with a couple different things that I think looks better also I added a database so you can submit your email in the footer. When not it mobile view you can see how I used a modal from material-ui and the calendar from simple react calendar, you can also reserve a data which gets put into the data base.
+Technologies Used: ReactJS, HTML5, CSS3, NodeJS, ExpressJS, MongoDB, Mongoose, fontAwesome, axios, dotenv, lodash, simple-react-calendar, react-transition-group, react-google-maps, material-ui.
 
-thanks
+I redid an existing restaurant site with my own design. In the footer you can submit an email address and it gets added to the database. I created a photo carousel with an image animation that only happens when the site renders and disappears when clicking to the next image. When clicking reservations not in mobile view I create a model that has a calendar and dropdown menus that get added to a database. In team I only created a model for the first team member just to show the ability to do so. In mobile view I created a hamburger menu that has a slight fade in transition.
+
+Thanks,
 Gurjot
